@@ -13,7 +13,7 @@
 
 # 📄 Script Tampermonkey – Contar Suporte Técnico
 
-Este repositório contém um **script para Tampermonkey** que automatiza a contagem de atendimentos do tipo **"Suporte Técnico", considerando **todos os filtros de status** no sistema **Integrator 6 da EliteSoft**.
+Este repositório contém um **script para Tampermonkey** que automatiza a contagem de atendimentos do tipo **"Suporte Técnico"**, considerando **todos os filtros de status** no sistema **Integrator 6 da EliteSoft**.
 
 ---
 
