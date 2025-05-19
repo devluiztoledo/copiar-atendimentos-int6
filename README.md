@@ -7,7 +7,7 @@
 1. Instale a extensão [Tampermonkey](https://www.tampermonkey.net/) no seu navegador.
 2. Clique no botão abaixo para instalar diretamente:
 
-👉 **[Instalar Script](https://raw.githubusercontent.com/devluiztoledo/copiar-atendimentos-int6/main/atendimentos-script.user.js)**
+👉 **[Instalar Script](https://github.com/devluiztoledo/copiar-atendimentos-int6/raw/refs/heads/main/atendimentos-script.user.js)**
 
 ---
 
