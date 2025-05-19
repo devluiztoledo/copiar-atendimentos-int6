@@ -6,8 +6,8 @@
 // @author       Luiz Toledo
 // @match        *://integrator6.gegnet.com.br/*
 // @grant        GM_setClipboard
-// @downloadURL    https://raw.githubusercontent.com/devluiztoledo/copiar-atendimentos-int6/main/atendimentos-script.user.js
-// @updateURL      https://raw.githubusercontent.com/devluiztoledo/copiar-atendimentos-int6/main/atendimentos-script.user.js
+// @downloadURL    https://github.com/devluiztoledo/copiar-atendimentos-int6/raw/refs/heads/main/atendimentos-script.user.js
+// @updateURL      https://github.com/devluiztoledo/copiar-atendimentos-int6/raw/refs/heads/main/atendimentos-script.user.js
 // ==/UserScript==
 
 (function () {
