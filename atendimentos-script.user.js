@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         A2 Copiar atendimentos INT6 - Luiz Toledo
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Copia quantidade + lista detalhada de atendimentos concluídos de Suporte Técnico nos últimos 3 meses com data, hora, protocolo e tipo de atendimento para relatórios e clipboard do cliente.
 // @author       Luiz Toledo
 // @match        *://integrator6.gegnet.com.br/*
 // @grant        GM_setClipboard
-// @downloadURL    https://github.com/devluiztoledo/copiar-atendimentos-int6/raw/refs/heads/main/atendimentos-script.user.js
-// @updateURL      https://github.com/devluiztoledo/copiar-atendimentos-int6/raw/refs/heads/main/atendimentos-script.user.js
+// @icon         https://raw.githubusercontent.com/devluiztoledo/copiar-atendimentos-int6/main/icon.png
+// @downloadURL  https://github.com/devluiztoledo/copiar-atendimentos-int6/raw/refs/heads/main/atendimentos-script.user.js
+// @updateURL    https://github.com/devluiztoledo/copiar-atendimentos-int6/raw/refs/heads/main/atendimentos-script.user.js
 // ==/UserScript==
 
 (function () {
