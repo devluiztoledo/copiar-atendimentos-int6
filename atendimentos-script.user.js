@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         A2 Copiar atendimentos INT6 - Luiz Toledo
 // @namespace    http://tampermonkey.net/
-// @version      1.2
-// @description  Copia quantidade + lista detalhada de atendimentos concluídos de Suporte Técnico nos últimos 3 meses com data, hora, protocolo e tipo de atendimento para relatórios e clipboard do cliente.
+// @version      2.0
+// @description  Copia quantidade + lista detalhada de atendimentos concluídos de Suporte Técnico nos últimos 3 meses para relatórios e clipboard do cliente
 // @author       Luiz Toledo
 // @match        *://integrator6.gegnet.com.br/*
+// @match        *://integrator6.acessoline.net.br/*
 // @grant        GM_setClipboard
 // @icon         https://raw.githubusercontent.com/devluiztoledo/copiar-atendimentos-int6/main/icon.png
 // @downloadURL  https://github.com/devluiztoledo/copiar-atendimentos-int6/raw/refs/heads/main/atendimentos-script.user.js
@@ -34,7 +35,6 @@
                 botaoConcluidos.click();
             }
 
-
             setTimeout(() => {
                 const hoje = new Date();
                 const tresMesesAtras = new Date();
@@ -44,7 +44,6 @@
                 const atendimentos = [];
 
                 linhas.forEach(linha => {
-
                     if (!linha.querySelector('.fa-flag.CONCLUID')) return;
 
                     const spans = linha.querySelectorAll('span.ui-cell-data');
@@ -54,22 +53,15 @@
                     spans.forEach(span => {
                         const texto = span.innerText.trim();
 
-
                         if (/^\d{2}\/\d{2}\/\d{4}$/.test(texto)) data = texto;
-
-
                         if (/^\d{2}:\d{2}$/.test(texto)) hora = texto;
+                        if (/^\d{6,7}$/.test(texto)) protocolo = texto;
 
-
-                        if (/^\d{7}$/.test(texto)) protocolo = texto;
-
-
-                        if (texto.toLowerCase().includes('suporte técnico')) {
+                        if (/suporte técnico/i.test(texto) || /\bSUP[\s-]?RES\b/i.test(texto)) {
                             tipo = texto;
                             ehSuporteTecnico = true;
                         }
                     });
-
 
                     if (data && hora) {
                         const [dia, mes, ano] = data.split('/');
@@ -82,7 +74,9 @@
                     }
                 });
 
-                const msg = `Cliente possui ${atendimentos.length} atendimentos nos últimos 3 meses\n\n${atendimentos.join('\n')}`;
+
+                const resumo = `Cliente possui ${atendimentos.length} atendimentos nos últimos 3 meses`;
+                const msg = resumo + '\n' + atendimentos.join('\n');
 
                 if (typeof GM_setClipboard === 'function') {
                     GM_setClipboard(msg);
